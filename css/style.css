@@ -91,6 +91,8 @@ label{
 	margin-bottom: .2em;
 }
 
+
+
 .campo{
 	margin: 0;
 	padding-bottom: 1em;
@@ -98,4 +100,8 @@ label{
 	border: 1px solid rgb(142, 142, 142);
 	padding: .7em;
 	width: 25%;
+}
+
+span{
+    color: red;
 }
