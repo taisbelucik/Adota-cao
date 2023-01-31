@@ -64,7 +64,7 @@ function montaTr(cao) {
   //cria a linha da tabela
   var caoTr = document.createElement("tr");
   caoTr.classList.add("cao");
-
+  console.log(caoTr);
   var nomeTd = montaTd(cao.nome, "info-nome");
   var idadeTd = montaTd(cao.idade, "info-idade");
   var porteTd = montaTd(cao.porte, "info-porte");
