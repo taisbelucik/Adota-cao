@@ -35,8 +35,8 @@ botaoAdicionar.addEventListener("click", function (event) {
     faltaPorte.textContent = "Está faltando informar o porte";
   }
   if (cao.raça === "") {
-    var faltaRaça = document.querySelector("#falta-raça");
-    faltaRaça.textContent = "Está faltando informar a raça";
+    var faltaRaca = document.querySelector("#falta-raca");
+    faltaRaca.textContent = "Está faltando informar a raça";
   } else {
     //limpa o formulário
     form.reset();
@@ -54,7 +54,7 @@ function obtemCaoDoFormulario(form) {
     nome: form.nome.value,
     idade: form.idade.value,
     porte: form.porte.value,
-    raça: form.raça.value,
+    raça: form.raca.value,
   };
 
   return cao;
@@ -68,13 +68,13 @@ function montaTr(cao) {
   var nomeTd = montaTd(cao.nome, "info-nome");
   var idadeTd = montaTd(cao.idade, "info-idade");
   var porteTd = montaTd(cao.porte, "info-porte");
-  var raçaTd = montaTd(cao.raça, "info-raça");
+  var racaTd = montaTd(cao.raça, "info-raca");
 
   //adiciona os espaços (td) dentro da linha(tr) com as informações
   caoTr.appendChild(nomeTd);
   caoTr.appendChild(idadeTd);
   caoTr.appendChild(porteTd);
-  caoTr.appendChild(raçaTd);
+  caoTr.appendChild(racaTd);
 
   return caoTr;
 }
