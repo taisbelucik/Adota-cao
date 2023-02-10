@@ -7,8 +7,6 @@
 //   console.log("idade inválida");
 // }
 
-// console.log(idade);
-
 var botaoAdicionar = document.querySelector("#adicionar-cao");
 
 botaoAdicionar.addEventListener("click", function (event) {
@@ -25,11 +23,13 @@ botaoAdicionar.addEventListener("click", function (event) {
   if (cao.nome === "") {
     var faltaNome = document.querySelector("#falta-nome");
     faltaNome.textContent = "Está faltando informar o nome";
+    console.log(cao.nome);
   }
   if (cao.idade === "") {
     var faltaIdade = document.querySelector("#falta-idade");
-    faltaIdade.textContent = "Está faltando informar a idade";
+    faltaIdade.textContent = "Informação inválida";
   }
+
   if (cao.porte === "") {
     var faltaPorte = document.querySelector("#falta-porte");
     faltaPorte.textContent = "Está faltando informar o porte";
@@ -47,14 +47,40 @@ botaoAdicionar.addEventListener("click", function (event) {
     tabela.appendChild(caoTr);
   }
 });
+//------------------------------------------------------------------//
+// apaga as mensagens de erro quando é digitado no input
+function digitaCampo(input) {
+  if (input === nome) {
+    var spanNome = document.querySelector("#falta-nome");
+    spanNome.textContent = "";
+  }
+  if (input === idade) {
+    var spanIdade = document.querySelector("#falta-idade");
+    spanIdade.textContent = "";
+  }
+  if (input === porte) {
+    var spanPorte = document.querySelector("#falta-porte");
+    spanPorte.textContent = "";
+  }
+
+  if (input === raca) {
+    var spanRaca = document.querySelector("#falta-raca");
+    spanRaca.textContent = "";
+  }
+}
+
 //--------------------------------------------//
 //pega o conteúdo dos inputs do formulário
 function obtemCaoDoFormulario(form) {
-  var cao = {
+  const mesEano = `${form.idade.value} ${form.mes_ano.value}`;
+  console.log(mesEano);
+  const cao = {
     nome: form.nome.value,
-    idade: form.idade.value,
+    idade: mesEano,
+    soIdade: form.idade.value,
     porte: form.porte.value,
     raça: form.raca.value,
+    mesAno: form.mes_ano.value,
   };
 
   return cao;

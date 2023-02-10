@@ -1,0 +1,26 @@
+@media screen and (max-width: 700px){
+    #titulo-form {
+        font-size: 15px;
+        width: 100%;
+        
+    }
+    h2{
+        margin-left: 100px;
+    }
+    #form-adiciona {
+        background: green;
+        width: 100%;
+    }
+    #form-adiciona .grupo {
+        display: block;
+        
+        margin-left: 100px;
+    }
+    #adicionar-cao {
+      margin-left: 100px;
+    }
+    .campo {
+
+        width: 55%;
+    }
+}

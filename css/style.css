@@ -1,12 +1,14 @@
 body{
     background: rgb(250, 250, 250);
+    font-family: 'PT Serif', serif;
 }
 
 .container-adicionar{
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    background:rgb(226, 238, 222);
+    
+
 }
 
 .titulo{
@@ -32,7 +34,7 @@ h2{
 }
 
 #form-adiciona{
-    background: rgb(226, 238, 222);
+    
     margin-top: 21px;
     
     
@@ -51,6 +53,7 @@ h2{
 #form-adiciona .grupo{
     margin-top: 12px;
     margin-left: 273px;
+ 
 }
 
 #adicionar-cao{
@@ -64,7 +67,8 @@ h2{
 .container-tabela{
     margin-top: 38px;
     background-color: rgb(183, 255, 231);
-    width: 80%;
+    width: 100%;
+
 }
 
 table{
@@ -120,4 +124,23 @@ span{
 
 .invisivel{
     display: none;
+}
+
+footer{
+    background: rgb(223, 134, 101);
+    padding: 30px;
+   
+}
+
+.contato{
+    margin-left: 400px;
+    line-height: 25px;
+    font-size: 0.8rem;
+   
+
+    
+}
+
+.contato h1{  
+    font-weight: bold;
 }
