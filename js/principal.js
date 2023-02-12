@@ -13,31 +13,48 @@ botaoAdicionar.addEventListener("click", function (event) {
   event.preventDefault();
 
   //chama a função que pega os dados do formulário
-  var form = document.querySelector("#form-adiciona");
-  var cao = obtemCaoDoFormulario(form);
+  const form = document.querySelector("#form-adiciona");
+  const cao = obtemCaoDoFormulario(form);
 
   //adiciona o TR e o TD dentro da tabela
-  var tabela = document.querySelector("#tabela-adocao");
+  const tabela = document.querySelector("#tabela-adocao");
+
+  existeErro = false;
 
   //valida se está faltando informações no formulário
   if (cao.nome === "") {
-    var faltaNome = document.querySelector("#falta-nome");
+    const faltaNome = document.querySelector("#falta-nome");
     faltaNome.textContent = "Está faltando informar o nome";
-    console.log(cao.nome);
+
+    existeErro = true;
   }
-  if (cao.idade === "") {
-    var faltaIdade = document.querySelector("#falta-idade");
+
+  if (cao.soIdade !== "") {
+    const idade = Math.sign(cao.soIdade);
+    if (idade === -1) {
+      const faltaIdade = document.querySelector("#falta-idade");
+      faltaIdade.textContent = "A idade não pode ser negativa";
+    }
+  }
+
+  if (cao.soIdade === "") {
+    const faltaIdade = document.querySelector("#falta-idade");
     faltaIdade.textContent = "Informação inválida";
+    existeErro = true;
   }
 
   if (cao.porte === "") {
-    var faltaPorte = document.querySelector("#falta-porte");
+    const faltaPorte = document.querySelector("#falta-porte");
     faltaPorte.textContent = "Está faltando informar o porte";
+    existeErro = true;
   }
   if (cao.raça === "") {
-    var faltaRaca = document.querySelector("#falta-raca");
+    const faltaRaca = document.querySelector("#falta-raca");
     faltaRaca.textContent = "Está faltando informar a raça";
-  } else {
+    existeErro = true;
+  }
+
+  if (existeErro === false) {
     //limpa o formulário
     form.reset();
 
@@ -73,7 +90,6 @@ function digitaCampo(input) {
 //pega o conteúdo dos inputs do formulário
 function obtemCaoDoFormulario(form) {
   const mesEano = `${form.idade.value} ${form.mes_ano.value}`;
-  console.log(mesEano);
   const cao = {
     nome: form.nome.value,
     idade: mesEano,
@@ -90,7 +106,6 @@ function montaTr(cao) {
   //cria a linha da tabela
   var caoTr = document.createElement("tr");
   caoTr.classList.add("cao");
-  console.log(caoTr);
   var nomeTd = montaTd(cao.nome, "info-nome");
   var idadeTd = montaTd(cao.idade, "info-idade");
   var porteTd = montaTd(cao.porte, "info-porte");
