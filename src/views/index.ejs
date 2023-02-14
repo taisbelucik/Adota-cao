@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdotaCão</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins:wght@300;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img class="titulo" src="img/adotacao-logo.svg" alt="">
+        </div>
+    </header>
+
+    <main>
+        <section class="container-adicionar">
+            <div id="titulo-form">
+                <h2>Cadastro de cães para adoção</h2>
+            </div>
+            
+            <form id="form-adiciona">
+                <div class="grupo">
+                    <label for="nome">Nome:</label>
+                    <input id="nome"  name="nome" type="text" onkeyup="digitaCampo(nome)" class="campo" placeholder="Somente letras">
+                    <span id="falta-nome"></span>
+                </div>
+                <div class="grupo">
+                    <label for="idade">Idade:</label>
+                    <input id="idade"  name="idade" type="number" onkeyup="digitaCampo(idade)"  class="campo">
+                    <select name="mes_ano" id="mes_ano">
+                        <option value="mês/meses">Mês/meses</option>
+                        <option value="ano/anos">Ano/anos</option>
+                    </select>
+                    <span id="falta-idade"></span>
+                </div>
+                <div class="grupo">
+                    <label for="porte">Porte:</label>
+                    <select name="porte" id="porte" class="campo" onkeyup="digitaCampo(porte)">  
+                        
+                        <option value="Pequeno">Pequeno</option>
+                        <option value="Médio">Médio</option>
+                        <option value="Grande">Grande</option>
+                    </select>
+                    <span id="falta-porte"></span>
+                </div>
+                <div class="grupo">
+                    <label for="raca">Raça:</label>
+                    <input id="raca"  type="text" onkeyup="digitaCampo(raca)" class="campo" placeholder="Somente letras"> 
+                    <span id="falta-raca"></span>
+                </div>
+        
+                <button id="adicionar-cao" class="botao bto-principal">Adicionar</button>
+            </form>
+        </section>
+
+        <label for="filtrar-tabela">Filtre:</label>
+    <input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do cão">
+
+        <section class="container-tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+						<th>Idade</th>
+						<th>Porte</th>
+						<th>Raça</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabela-adocao">
+                    <tr class="cao" id="primeiro-cao" >
+                        <td class="info-nome">Paçoca</td>
+                        <td class="info-idade">3</td>
+                        <td class="info-porte">pequeno</td>
+                        <td class="info-raca">pug</td>
+                        
+                    </tr>
+
+
+
+
+                </tbody>
+            </table>
+
+        </section>
+    </main>
+    <footer>
+    
+
+    </footer>
+
+    
+    <script src="js/principal.js"></script>
+    <script src="js/remove.js"></script>
+    <script src="js/filtro.js"></script>
+    <script src="js/utils.js"></script>
+</body>
+</html>

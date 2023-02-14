@@ -1,0 +1,24 @@
+{
+  "name": "adota-cao",
+  "version": "1.0.0",
+  "description": "Projeto desenvolvido para cadastrar cães disponíveis para adoção",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taisbelucik/Adota-cao.git"
+  },
+  "keywords": [],
+  "author": "Taís Letícia Belucik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taisbelucik/Adota-cao/issues"
+  },
+  "homepage": "https://github.com/taisbelucik/Adota-cao#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  }
+}
