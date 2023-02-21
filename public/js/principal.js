@@ -10,8 +10,6 @@
 var botaoAdicionar = document.querySelector("#adicionar-cao");
 
 botaoAdicionar.addEventListener("click", function (event) {
-  event.preventDefault();
-
   //chama a função que pega os dados do formulário
   const form = document.querySelector("#form-adiciona");
   const cao = obtemCaoDoFormulario(form);
