@@ -55,7 +55,7 @@
                     <input id="raca" name="raca" type="text" onkeyup="digitaCampo(raca)" class="campo" placeholder="Somente letras"> 
                     <span id="falta-raca"></span>
                 </div>
-        
+                <% console.log(registros) %> 
                 <button id="adicionar-cao" class="botao bto-principal">Adicionar</button>
             </form>
         </section>
@@ -75,16 +75,15 @@
                 </thead>
 
                 <tbody id="tabela-adocao">
+                    <% registros.forEach(registro => {
+                    %>
                     <tr class="cao" id="primeiro-cao" >
-                        <td class="info-nome">Paçoca</td>
-                        <td class="info-idade">3</td>
-                        <td class="info-porte">pequeno</td>
-                        <td class="info-raca">pug</td>
-                        
+                        <td class="info-nome">"<%= registro.nome %>"</td>
+                        <td class="info-idade">"<%= registro.idade %>"</td>
+                        <td class="info-porte">"<%= registro.porte %>"</td>
+                        <td class="info-raca">"<%= registro.raca %>"</td>                      
                     </tr>
-
-
-
+                   <% }) %>
 
                 </tbody>
             </table>

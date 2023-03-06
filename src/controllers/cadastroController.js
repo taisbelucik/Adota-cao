@@ -9,7 +9,11 @@ module.exports = {
     const porte = req.body.porte;
     const raca = req.body.raca;
 
-    await db.run(`INSERT INTO cadastro (
+    console.log(req.body);
+
+    await db
+      .run(
+        `INSERT INTO cadastro(
         nome,
         idade,
         porte,
@@ -19,8 +23,19 @@ module.exports = {
          ${idade},
         "${porte}",
         "${raca}"
-    )`);
+    )`
+      )
+      .catch((res) => {
+        console.log(res);
+      });
 
     res.redirect(`/`);
+  },
+
+  async list(req, res) {
+    const db = await Database();
+    const cadastros = await db.all(`SELECT * FROM cadastro`);
+
+    res.render("index", { registros: cadastros });
   },
 };
